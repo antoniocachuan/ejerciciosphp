@@ -1,0 +1,34 @@
+$('#newCoffee a').click ->
+  name = prompt('Name of coffee:')
+  coffee = $("<li> #{name} </li>");
+  $('ul.drink').append(coffee);
+
+$('#newCoffee a').click(function() {
+  var coffee, name;
+  name = prompt('Name of coffee:');
+  coffee = $("<li> " + name + " </li>");
+  return $('ul.drink').append(coffee);
+});
+
+
+-----
+
+# $('.drink li a').click(function(e) {
+#   e.preventDefault();
+#   alert($(this).text());
+# });
+$('.drink li a').click (e) ->
+    e.preventDefault()
+    alert($(@).text())
+
+-----
+# $('.drink li').mouseenter(function() {
+#   $(this).find('span').show();
+# });
+# $('.drink li').mouseleave(function() {
+#   $(this).find('span').hide();
+# });
+$('.drink li').mouseenter ->
+  $(@).find('span').show();
+$('.drink li').mouseleave ->
+  $(@).find('span').hide();
